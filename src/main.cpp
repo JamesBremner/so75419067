@@ -106,6 +106,7 @@ void cProblem::collect()
             for (auto &csPath : cs)
             {
                 // check that P is vertex disjoint with path in collection
+
                 disjoint = true;
                 for (auto vc : csPath)
                 {
@@ -113,14 +114,18 @@ void cProblem::collect()
                     {
                         if (vp == vc)
                             disjoint = false;
+                            break;
                     }
                 }
+                if( ! disjoint )
+                    break;
             }
 
             if (disjoint)
             {
                 // P is vertex disjoint from every path in collection
                 // add P to the collection
+
                 cs.push_back(P);
                 found = true;
                 break;
@@ -130,6 +135,7 @@ void cProblem::collect()
         {
             // P was NOT vertex disjoint with the paths in any collection
             // start a new collection with P
+
             std::vector<std::vector<int>> collection;
             collection.push_back(P);
             vVDP.push_back(collection);
