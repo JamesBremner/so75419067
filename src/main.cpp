@@ -112,9 +112,10 @@ void cProblem::collect()
                 {
                     for (auto &vp : P)
                     {
-                        if (vp == vc)
+                        if (vp == vc) {
                             disjoint = false;
                             break;
+                        }
                     }
                 }
                 if( ! disjoint )
