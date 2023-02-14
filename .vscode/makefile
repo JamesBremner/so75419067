@@ -1,11 +1,11 @@
 #source file search paths
-VPATH = ./src 
+VPATH = ./src ../PathFinderFeb2023/src
 
 	# compiler include search paths
 INCS = -I./include \
 	-I../windex/include \
 	-I../raven-set \
-	-I../../code_ext/boost/boost1_78 
+	-I../PathFinderFeb2023/src
 
 LIBS = \
 	-lgdiplus -lgdi32 -lcomdlg32 -lstdc++fs \
@@ -25,7 +25,9 @@ CCflags = -std=c++17 $(OPT) -D_mingw_
 
 # sources
 OBJ_starter = \
-	$(ODIR)/main.o 
+	$(ODIR)/main.o \
+	$(ODIR)/cGraphData.o \
+	$(ODIR)/GraphTheory.o
 
 ### COMPILE
 

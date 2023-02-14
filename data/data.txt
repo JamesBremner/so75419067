@@ -1,0 +1,9 @@
+format paths
+l 1 2
+l 2 3
+l 1 4
+l 4 3
+s 1
+t 3
+c 2
+c 4
